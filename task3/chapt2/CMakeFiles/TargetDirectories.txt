@@ -1,0 +1,6 @@
+/media/seaber/E/RM/RMVision/task3/chapt2/CMakeFiles/ros2_cpp_node.dir
+/media/seaber/E/RM/RMVision/task3/chapt2/CMakeFiles/uninstall.dir
+/media/seaber/E/RM/RMVision/task3/chapt2/CMakeFiles/ros2_cpp_uninstall.dir
+/media/seaber/E/RM/RMVision/task3/chapt2/CMakeFiles/test.dir
+/media/seaber/E/RM/RMVision/task3/chapt2/CMakeFiles/edit_cache.dir
+/media/seaber/E/RM/RMVision/task3/chapt2/CMakeFiles/rebuild_cache.dir
