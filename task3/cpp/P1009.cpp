@@ -3,7 +3,7 @@ using namespace std;
 #define MAX 100
 int n;
 int S[MAX],t[MAX],c1[MAX];
-
+//
 int* add(int* output,int* inA,int* inB){
     bool ifCarry=0;
     for(int i=MAX-1;i>=0;i--){

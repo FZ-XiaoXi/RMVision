@@ -1,0 +1,96 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int num[9];
+int a,b;
+int maxbit,bit;
+void genbit(int nbit);
+int toInt(void);
+void ifPrimeNumber(int nownum);
+int main() {
+
+    cin>>a>>b;
+    int abit=1,bbit=1;
+    for(int s=1;abit<=9;abit++){
+        if(a/s){
+            s*=10;
+        }else{
+            abit--;
+            break;
+        }
+    }
+    for(int s=1;bbit<=9;bbit++){
+        if(b/s){
+            s*=10;
+        }else{
+            bbit--;
+            break;
+        }
+    }
+
+    for(bit=abit;bit<=bbit ; bit++){
+        if(bit%2==0){
+            maxbit=bit/2;
+            //cout<<maxbit<<endl;
+            genbit(1);
+        }else{
+            maxbit=(bit+1)/2;
+            //cout<<maxbit<<endl;
+            genbit(1);
+        }
+    }
+    return 0;
+}
+void genbit(int nbit){
+    for(int i=0;i<=9;i++){
+        if(i==0&&nbit==1){
+            continue;
+        }
+        if(nbit==1&&i%2==0){
+            continue;
+        }
+        num[nbit]=i;
+        if(nbit>=maxbit){
+            if(bit%2==0){
+                for(int j=nbit+1,k=nbit;j<=bit;j++){
+                    num[j]=num[k];
+                    k--;
+                }
+            }else{
+                for(int j=nbit+1,k=nbit-1;j<=bit;j++){
+                    num[j]=num[k];
+                    k--;
+                }
+            }
+            // for(int j=1;j<=8;j++){
+            //     cout<<num[j];
+            // }
+            int nownum=toInt();
+            if(nownum>=a&&nownum<=b){
+                //cout<<nownum<<endl;
+                ifPrimeNumber(nownum);
+            }else{
+            }
+        }else{
+            genbit(nbit+1);
+        }
+    }
+}
+int toInt(void){
+    int n=0,s=1;
+    for(int i=1;i<=bit;i++){
+        n+=num[bit-i+1]*s;
+        s*=10;
+    }
+    return n;
+}
+
+void ifPrimeNumber(int nownum){
+    for(int i=2;i<=sqrt(nownum);i++){
+        if(nownum%i==0){
+            return;
+        }
+    }
+    cout<<nownum<<endl;
+    return;
+}
